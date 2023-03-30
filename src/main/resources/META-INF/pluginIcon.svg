@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <title>iPad Spotlight</title>
+    <defs>
+        <linearGradient x1="30.0916872%" y1="60.1389818%" x2="93.1070667%" y2="-39.8125462%" id="linearGradient-1">
+            <stop stop-color="#6700EB" offset="0%"/>
+            <stop stop-color="#45009D" offset="100%"/>
+        </linearGradient>
+        <linearGradient x1="69.9085121%" y1="39.8610343%" x2="6.89327782%" y2="139.812536%" id="linearGradient-2">
+            <stop stop-color="#6700EB" offset="0%"/>
+            <stop stop-color="#45009D" offset="100%"/>
+        </linearGradient>
+    </defs>
+    <g id="iPad-Spotlight" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="svg-transparent-bg" transform="translate(10.000000, 4.000000)" fill-rule="nonzero">
+            <path d="M0,15.99549 L5.29115628,15.99549 C7.30473303,15.99549 9.20112781,16.9418353 10.4118061,18.5507302 L15.6311177,25.4866903 C15.7297795,25.6178128 15.744663,25.7937878 15.6694375,25.9395245 L12.6608243,31.7687211 C12.5165019,32.0483415 12.129532,32.0812737 11.9400879,31.8299385 L0,15.99549 Z"
+                  id="Path" fill="url(#linearGradient-1)"/>
+            <path d="M20.8189114,16.0045143 L15.5277416,16.0045143 C13.5142322,16.0045143 11.6177701,15.0581689 10.4070918,13.449274 L5.18778024,6.51331401 C5.08911841,6.38219143 5.0743023,6.20621644 5.14952773,6.0604798 L8.15807364,0.231310141 C8.30246337,-0.0483574112 8.68936589,-0.0812559109 8.87887741,0.170032056 L20.8189114,16.0045143 Z"
+                  id="Path" fill="url(#linearGradient-2)"/>
+        </g>
+    </g>
+</svg>
