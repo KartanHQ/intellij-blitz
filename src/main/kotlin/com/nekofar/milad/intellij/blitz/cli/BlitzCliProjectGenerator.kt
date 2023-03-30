@@ -13,7 +13,7 @@ import javax.swing.Icon
 class BlitzCliProjectGenerator : NpmPackageProjectGenerator() {
     private val packageName = "blitz"
     private val executable = "blitz"
-    private val initCommand = "init"
+    private val newCommand = "new"
 
     override fun getName(): String {
         return BlitzBundle.message("blitz.project.generator.name")
@@ -46,7 +46,7 @@ class BlitzCliProjectGenerator : NpmPackageProjectGenerator() {
     }
 
     override fun generatorArgs(project: Project?, dir: VirtualFile?, settings: Settings?): Array<String> {
-        return arrayOf(initCommand, project?.name.toString())
+        return arrayOf(newCommand, project?.name.toString())
     }
 
     override fun getIcon(): Icon {
