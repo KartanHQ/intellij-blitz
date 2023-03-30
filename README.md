@@ -2,8 +2,8 @@
 
 [![JetBrains Plugins](https://img.shields.io/jetbrains/plugin/v/21372-blitz)](https://plugins.jetbrains.com/plugin/21372-blitz)
 [![JetBrains plugins](https://img.shields.io/jetbrains/plugin/d/21372-blitz)](https://plugins.jetbrains.com/plugin/21372-blitz/versions)
-[![GitHub Workflow Status (branch)](https://img.shields.io/github/actions/workflow/status/nekofar/intellij-blitz/build.yml?branch=master)](https://github.com/nekofar/intellij-blitz/actions/workflows/build.yml)
-[![GitHub](https://img.shields.io/github/license/nekofar/intellij-blitz)](https://github.com/nekofar/intellij-blitz/blob/master/LICENSE)
+[![GitHub Workflow Status (branch)](https://img.shields.io/github/actions/workflow/status/KartanHQ/intellij-blitz/build.yml?branch=master)](https://github.com/KartanHQ/intellij-blitz/actions/workflows/build.yml)
+[![GitHub](https://img.shields.io/github/license/KartanHQ/intellij-blitz)](https://github.com/nekofar/intellij-blitz/blob/master/LICENSE)
 [![Twitter Follow](https://img.shields.io/badge/follow-%40nekofar-1DA1F2?logo=twitter&style=flat)](https://twitter.com/nekofar)
 
 <!-- Plugin description -->
