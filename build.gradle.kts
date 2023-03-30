@@ -1,7 +1,11 @@
+import org.jetbrains.changelog.Changelog
+
 plugins {
     id("java")
-    id("org.jetbrains.kotlin.jvm") version "1.7.20"
-    id("org.jetbrains.intellij") version "1.13.1"
+    id("org.jetbrains.kotlin.jvm") version "1.8.10"
+    id("org.jetbrains.intellij") version "1.13.3"
+    // Gradle Changelog Plugin
+    id("org.jetbrains.changelog") version "2.0.0"
 }
 
 group = "com.nekofar.milad"
@@ -17,7 +21,14 @@ intellij {
     version.set("2021.3")
     type.set("IU") // Target IDE Platform
 
-    plugins.set(listOf(/* Plugin Dependencies */))
+    plugins.set(listOf("JavaScript"))
+}
+
+// Configure Gradle Changelog Plugin - read more: https://github.com/JetBrains/gradle-changelog-plugin
+changelog {
+    version.set("1.0.0-alpha.1")
+    groups.set(emptyList())
+    repositoryUrl.set("https://github.com/KartanHQ/intellij-remix")
 }
 
 tasks {
@@ -31,8 +42,34 @@ tasks {
     }
 
     patchPluginXml {
+        version.set("1.0.0-alpha.1")
         sinceBuild.set("213")
         untilBuild.set("231.*")
+
+        // Extract the <!-- Plugin description --> section from README.md and provide for the plugin's manifest
+        pluginDescription.set(
+            file("README.md").readText().lines().run {
+                val start = "<!-- Plugin description -->"
+                val end = "<!-- Plugin description end -->"
+
+                if (!containsAll(listOf(start, end))) {
+                    throw GradleException("Plugin description section not found in README.md:\n$start ... $end")
+                }
+                subList(indexOf(start) + 1, indexOf(end))
+            }.joinToString("\n").let { org.jetbrains.changelog.markdownToHTML(it) }
+        )
+
+        // Get the latest available change notes from the changelog file
+        changeNotes.set(provider {
+            with(changelog) {
+                val changelogItem = getOrNull("1.0.0-alpha.1")
+                    ?: runCatching { getLatest() }.getOrElse { getUnreleased() }
+                renderItem(
+                    changelogItem.withHeader(false),
+                    Changelog.OutputType.HTML,
+                )
+            }
+        })
     }
 
     signPlugin {
